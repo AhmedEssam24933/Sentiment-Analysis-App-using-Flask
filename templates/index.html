@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Arabic Sentiment Analysis</h1>
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="sentence">Enter a sentence:</label>
+                <textarea class="form-control" id="sentence" name="sentence" rows="3" placeholder="أدخل النص هنا"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Analyze Sentiment</button>
+        </form>
+        {% if sentiment %}
+        <div class="alert alert-info mt-4 text-center">
+            <strong>Sentiment:</strong> {{ sentiment }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
